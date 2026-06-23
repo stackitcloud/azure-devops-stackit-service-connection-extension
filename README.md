@@ -190,7 +190,6 @@ See [SECURITY.md](SECURITY.md) for:
 
 1. **Set GitHub Secrets** (in repository settings):
    - `MARKETPLACE_PAT`: Your Azure DevOps Marketplace Personal Access Token
-   - `PUBLISHER_ID`: Your Marketplace publisher ID (e.g., `stackitcloud`)
 
 2. **Publish** via GitHub Actions (`release.yml`):
    - Push a tag: `git tag v1.0.1 && git push --tags`
