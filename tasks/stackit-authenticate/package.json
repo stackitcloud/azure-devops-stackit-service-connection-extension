@@ -1,0 +1,21 @@
+{
+  "name": "stackit-authenticate",
+  "version": "1.0.0",
+  "description": "Authenticate with STACKIT using WIF or Key Flow credentials",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha tests/_suite.ts --require ts-node/register --exit",
+    "test:watch": "mocha tests/_suite.ts --require ts-node/register --watch"
+  },
+  "dependencies": {
+    "azure-pipelines-task-lib": "^4.6.0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^20.0.0",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  }
+}

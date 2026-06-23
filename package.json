@@ -1,0 +1,29 @@
+{
+  "name": "azure-devops-stackit-service-connection",
+  "version": "1.0.0",
+  "description": "Azure DevOps extension for STACKIT service connections with WIF and Key Flow authentication",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf tasks/*/dist tasks/*/index.js tasks/*/*.js tasks/*/*.js.map tasks/*/*.d.ts tasks/*/*.d.ts.map tasks/*/tests/**/*.js",
+    "install:task": "npm --prefix tasks/stackit-authenticate ci",
+    "build": "npm run clean && npm run install:task && node ./node_modules/typescript/bin/tsc --project tasks/stackit-authenticate",
+    "test": "npm run build && npm --prefix tasks/stackit-authenticate test",
+    "validate:extension": "rm -rf .tfx-validation && npx tfx extension create --manifest-globs vss-extension.json --output-path .tfx-validation --no-prompt && rm -rf .tfx-validation",
+    "package": "npm run build && npm run validate:extension && npx tfx extension create --manifest-globs vss-extension.json --rev-version",
+    "package:publish": "npm run validate:extension && npx tfx extension publish --manifest-globs vss-extension.json --publisher $(node -p \"require('./vss-extension.json').publisher\") --service-url https://marketplace.visualstudio.com --token $MARKETPLACE_PAT --no-prompt"
+  },
+  "keywords": [
+    "STACKIT",
+    "Azure DevOps",
+    "Service Connection",
+    "WIF",
+    "Workload Identity Federation"
+  ],
+  "author": "STACKIT",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tfx-cli": "^0.23.3",
+    "typescript": "^5.0.0"
+  }
+}

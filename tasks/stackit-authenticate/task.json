@@ -1,0 +1,47 @@
+{
+  "id": "c8bcb5eb-5f5d-4c1e-8f3c-9e5d7f8a9b0c",
+  "name": "StackitAuthenticate",
+  "friendlyName": "Authenticate with STACKIT",
+  "description": "Authenticate with STACKIT cloud platform using WIF (Workload Identity Federation) or Key Flow authentication. Sets up environment variables for STACKIT SDK and CLI.",
+  "iconName": "stackit-icon.jpg",
+  "helpMarkDown": "[Learn more about STACKIT authentication](https://github.com/stackitcloud/azure-devops-stackit-service-connection-extension)",
+  "category": "Deploy",
+  "author": "STACKIT",
+  "version": {
+    "Major": 1,
+    "Minor": 0,
+    "Patch": 7
+  },
+  "instanceNameFormat": "Authenticate with STACKIT ($(serviceConnection))",
+  "inputs": [
+    {
+      "name": "serviceConnection",
+      "type": "connectedService:stackit",
+      "label": "STACKIT Service Connection",
+      "defaultValue": "",
+      "required": true,
+      "helpMarkDown": "The STACKIT service connection to use. Can be configured for WIF or Key Flow authentication."
+    }   
+  ],
+  "execution": {
+    "Node20_1": {
+      "target": "index.js"
+    }
+  },
+  "minimumAgentVersion": "2.153.0",
+  "demands": [
+    "Agent.OS -equals Linux"
+  ],
+  "restrictions": {
+    "settableVariables": {
+      "allowed": [
+        "STACKIT_SERVICE_CONNECTION_ID",
+        "STACKIT_SERVICE_ACCOUNT_EMAIL",
+        "STACKIT_SERVICE_ACCOUNT_KEY_PATH"
+      ]
+    },
+    "commands": {
+      "mode": "restricted"
+    }
+  }
+}
