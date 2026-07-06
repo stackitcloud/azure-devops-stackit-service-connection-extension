@@ -229,7 +229,7 @@ npm run package:publish
 
 ## License
 
-[MIT](LICENSE)
+[Apache 2.0](LICENSE)
 
 ## Support
 
@@ -238,5 +238,3 @@ For issues, feature requests, or questions:
 - Documentation: [GitHub Wiki](https://github.com/stackitcloud/azure-devops-stackit-service-connection-extension/wiki)
 
 ---
-
-**Built with ❤️ for STACKIT cloud platform**
