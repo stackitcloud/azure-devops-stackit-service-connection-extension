@@ -4,8 +4,8 @@
   "version": "1.0.17",
   "name": "STACKIT Service Connection",
   "description": "Azure DevOps extension for STACKIT service connections with Workload Identity Federation (WIF) and Key Flow authentication",
-  "publisher": "JorTurFer",
-  "public": false,
+  "publisher": "Schwarz Digits",
+  "public": true,
   "targets": [
     {
       "id": "Microsoft.VisualStudio.Services"
